@@ -33,6 +33,8 @@ function FormeEquipe({ onScoreSubmit }) {
     }
   };
 
+  
+
   const handleAddScore = (e, equipeNum) => {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -125,22 +127,25 @@ function FormeEquipe({ onScoreSubmit }) {
             className='input-field'
           />
           <div className='score-inputs'>
-            <input
-              type="number"
-              name="butM"
-              placeholder="Buts marqués"
-              value={equipe1.butM}
-              onChange={(e) => setEquipe1({ ...equipe1, butM: parseInt(e.target.value, 10) })}
-              className='input-field'
-            />
-            <input
-              type="number"
-              name="butC"
-              placeholder="Buts encaissés"
-              value={equipe1.butC}
-              onChange={(e) => setEquipe1({ ...equipe1, butC: parseInt(e.target.value, 10) })}
-              className='input-field'
-            />
+          <input
+            type="number"
+            name="butM"
+            placeholder="Buts marqués"
+            value={equipe1.butM}
+            onChange={(e) => setEquipe1({ ...equipe1, butM: parseInt(e.target.value, 10) })}
+            className='input-field'
+            required  
+          />
+          <input
+            type="number"
+            name="butC"
+            placeholder="Buts encaissés"
+            value={equipe1.butC}
+            onChange={(e) => setEquipe1({ ...equipe1, butC: parseInt(e.target.value, 10) })}
+            className='input-field'
+            required 
+          />
+
           </div>
           <button type="submit" className='submit-button'>Ajouter Score</button>
         </form>
@@ -161,6 +166,7 @@ function FormeEquipe({ onScoreSubmit }) {
             value={equipe2.nom}
             onChange={(e) => handleTeamNameChange(e, 2)}
             className='input-field'
+            required
           />
           <div className='score-inputs'>
             <input
@@ -170,6 +176,7 @@ function FormeEquipe({ onScoreSubmit }) {
               value={equipe2.butM}
               onChange={(e) => setEquipe2({ ...equipe2, butM: parseInt(e.target.value, 10) })}
               className='input-field'
+              required
             />
             <input
               type="number"
